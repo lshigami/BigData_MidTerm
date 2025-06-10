@@ -1,0 +1,4 @@
+chips	4
+coke	3
+hotdogs	4
+chips,coke	3
