@@ -5,8 +5,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FullOuterJoinMapper extends Mapper<LongWritable, Text, Text, Text> {
-  private Text outKey = new Text();   // common key (e.g., Pizza)
-  private Text outValue = new Text(); // tagged value (e.g., "P:8" or "Q:3")
+  private Text outKey = new Text();  
+  private Text outValue = new Text(); 
 
   @Override
   protected void map(LongWritable key, Text value, Context context)
@@ -21,11 +21,11 @@ public class FullOuterJoinMapper extends Mapper<LongWritable, Text, Text, Text> 
 
       outKey.set(commonKey);
       if ("FoodPrice".equals(tableName)) {
-        outValue.set("P:" + val); // Tag for Price
+        outValue.set("P:" + val); 
       } else if ("FoodQuantity".equals(tableName)) {
-        outValue.set("Q:" + val); // Tag for Quantity
+        outValue.set("Q:" + val); 
       } else {
-        return; // Ignore other tables if any
+        return; 
       }
       context.write(outKey, outValue);
     }

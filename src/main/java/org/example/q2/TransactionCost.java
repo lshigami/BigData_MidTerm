@@ -22,11 +22,9 @@ public class TransactionCost {
     job.setMapperClass(TransactionCostMapper.class);
     job.setReducerClass(TransactionCostReducer.class);
 
-    // Mapper output types
     job.setMapOutputKeyClass(Text.class);
     job.setMapOutputValueClass(DoubleWritable.class);
 
-    // Reducer output types (final output)
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(DoubleWritable.class);
 

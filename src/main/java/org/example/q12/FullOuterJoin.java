@@ -23,7 +23,6 @@ public class FullOuterJoin {
 
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(Text.class);
-    // Mapper output key/value types are the same as Reducer output
 
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
